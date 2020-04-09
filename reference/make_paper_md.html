@@ -40,8 +40,8 @@
 
 
 <meta property="og:title" content="Make markdown documents for publications — make_paper_md" />
-<meta property="og:description" content="This function will create markdown documents in the Hugo Academic style for papers
-specified in a Google Sheet." />
+<meta property="og:description" content="This function will create markdown documents in the Hugo Academic style for
+papers specified in an Excel spreadsheet, CSV file, or Google Sheet." />
 
 
 
@@ -113,14 +113,15 @@ specified in a Google Sheet." />
     </div>
 
     <div class="ref-description">
-    <p>This function will create markdown documents in the Hugo Academic style for papers
-specified in a Google Sheet.</p>
+    <p>This function will create markdown documents in the Hugo Academic style for
+papers specified in an Excel spreadsheet, CSV file, or Google Sheet.</p>
     </div>
 
     <pre class="usage"><span class='fu'>make_paper_md</span>(
   <span class='no'>data</span>,
-  <span class='kw'>sheet_name</span> <span class='kw'>=</span> <span class='st'>"Sheet1"</span>,
+  <span class='kw'>sheet_name</span> <span class='kw'>=</span> <span class='st'>"papers"</span>,
   <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"./content/publication"</span>,
+  <span class='kw'>folder</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>create</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
 )</pre>
 
@@ -129,17 +130,23 @@ specified in a Google Sheet.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>The URL or a Sheet ID, which ident</p></td>
+      <td><p>The file containing your data</p></td>
     </tr>
     <tr>
       <th>sheet_name</th>
-      <td><p>Defines the sheet from which to read information on papers. Default is "Sheet1"</p></td>
+      <td><p>Defines the sheet from which to read information on papers.
+Default is "papers"</p></td>
     </tr>
     <tr>
       <th>dir</th>
       <td><p>The directory you would like the markdown documents to be saved
 in. Defaults to the correct folder for publication files when using the
 Hugo Academic blogdown template.</p></td>
+    </tr>
+    <tr>
+      <th>folder</th>
+      <td><p>Create each record within it's own folder in the main directory
+(TRUE), or simply create the files (FALSE). Default is TRUE</p></td>
     </tr>
     <tr>
       <th>create</th>

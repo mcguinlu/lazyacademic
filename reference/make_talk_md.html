@@ -41,7 +41,7 @@
 
 <meta property="og:title" content="Make markdown files for talks — make_talk_md" />
 <meta property="og:description" content="This function will create markdown files in the Hugo Academic style for talks
-specified in a Google Sheet." />
+specified in an Excel spreadsheet, CSV file, or Google Sheet." />
 
 
 
@@ -114,21 +114,43 @@ specified in a Google Sheet." />
 
     <div class="ref-description">
     <p>This function will create markdown files in the Hugo Academic style for talks
-specified in a Google Sheet.</p>
+specified in an Excel spreadsheet, CSV file, or Google Sheet.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>make_talk_md</span>(<span class='no'>dir</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"1-PItelqpv0Sb_LdiEDqb8O3D_Roii5nVTL07IRVbRtA"</span>)</pre>
+    <pre class="usage"><span class='fu'>make_talk_md</span>(
+  <span class='no'>data</span>,
+  <span class='kw'>sheet_name</span> <span class='kw'>=</span> <span class='st'>"talks"</span>,
+  <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"./content/talk"</span>,
+  <span class='kw'>folder</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>create</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>data</th>
+      <td><p>The location of the file containing your data. Can be a path to a
+local Excel/CSV file, or the URL of a Google Sheet.</p></td>
+    </tr>
+    <tr>
+      <th>sheet_name</th>
+      <td><p>Defines the sheet from which to read information on talks.
+Default is "talks"</p></td>
+    </tr>
+    <tr>
       <th>dir</th>
       <td><p>The directory you would like the markdown documents to be saved in</p></td>
     </tr>
     <tr>
-      <th>id</th>
-      <td><p>Your Google Sheet id</p></td>
+      <th>folder</th>
+      <td><p>Create each record within it's own folder in the main directory
+(TRUE), or simply create the files (FALSE). Default is TRUE</p></td>
+    </tr>
+    <tr>
+      <th>create</th>
+      <td><p>Logicial. If the specified directory doesn't exists, should it
+be created? Default is TRUE.</p></td>
     </tr>
     </table>
 
